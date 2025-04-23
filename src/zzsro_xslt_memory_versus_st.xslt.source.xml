@@ -1,0 +1,75 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:asx="http://www.sap.com/abapxml">
+
+  <tt:root name="DATA"/>
+  <tt:template>
+    <INTERFACE>
+      <tt:loop ref="DATA">
+        <OP>
+          <tt:attribute name="PROJECT_ID" value-ref="PROJECT_ID"/>
+          <tt:attribute name="ID" value-ref="ID"/>
+          <tt:attribute name="BUKRS" value-ref="BUKRS"/>
+          <tt:attribute name="TEXT" value-ref="TEXT"/>
+          <tt:attribute name="LONG" value-ref="LONG"/>
+          <tt:attribute name="PHASE_OP" value-ref="PHASE_OP"/>
+          <tt:attribute name="TYPE" value-ref="TYPE"/>
+          <tt:attribute name="UNIT_GE" value-ref="UNIT_GE"/>
+          <tt:attribute name="UNIT_TE" value-ref="UNIT_TE"/>
+          <tt:attribute name="UNIT_EP" value-ref="UNIT_EP"/>
+          <tt:attribute name="PRIO_DG" value-ref="PRIO_DG"/>
+          <tt:attribute name="PRIO_DT" value-ref="PRIO_DT"/>
+          <tt:attribute name="PRIO_MA" value-ref="PRIO_MA"/>
+          <tt:attribute name="STRAT_AXIS" value-ref="STRAT_AXIS"/>
+          <tt:attribute name="FONC_AXIS" value-ref="FONC_AXIS"/>
+          <tt:attribute name="TECH_AXIS" value-ref="TECH_AXIS"/>
+          <tt:attribute name="ESTIM_M0" value-ref="ESTIM_M0"/>
+          <tt:attribute name="DATE_M0" value-ref="DATE_M0"/>
+          <tt:attribute name="FEC" value-ref="FEC"/>
+          <tt:attribute name="DATE_BEG_OP" value-ref="DATE_BEG_OP"/>
+          <tt:attribute name="DATE_END_OP" value-ref="DATE_END_OP"/>
+          <tt:attribute name="DATE_BEG_TX" value-ref="DATE_BEG_TX"/>
+          <tt:attribute name="DATE_END_TX" value-ref="DATE_END_TX"/>
+          <tt:loop ref="EQUI">
+            <EQUI>
+              <tt:attribute name="MAIN" value-ref="MAIN"/>
+              <tt:attribute name="TPLNR" value-ref="TPLNR"/>
+              <tt:attribute name="TEXT" value-ref="TEXT"/>
+              <tt:attribute name="SORT1" value-ref="SORT1"/>
+            </EQUI>
+          </tt:loop>
+          <tt:loop ref="PRPS">
+            <PRPS>
+              <tt:attribute name="POSID" value-ref="POSID"/>
+              <tt:attribute name="TEXT" value-ref="TEXT"/>
+              <tt:attribute name="PROG_YEAR" value-ref="PROG_YEAR"/>
+              <tt:attribute name="PRART" value-ref="PRART"/>
+              <tt:attribute name="BDG_TYPE" value-ref="BDG_TYPE"/>
+              <tt:attribute name="DIR" value-ref="DIR"/>
+              <tt:attribute name="SECTION" value-ref="SECTION"/>
+              <tt:attribute name="FINCODE_NUM" value-ref="FINCODE_NUM"/>
+              <tt:attribute name="FINCODE_SHORT" value-ref="FINCODE_SHORT"/>
+              <tt:attribute name="FINCODE_LONG" value-ref="FINCODE_LONG"/>
+              <tt:attribute name="BDGSERV_NUM" value-ref="BDGSERV_NUM"/>
+              <tt:attribute name="BDGSERV_TEXT" value-ref="BDGSERV_TEXT"/>
+              <tt:attribute name="FISTL_GE" value-ref="FISTL_GE"/>
+              <tt:attribute name="FISTL_TE" value-ref="FISTL_TE"/>
+              <tt:attribute name="KOSTL" value-ref="KOSTL"/>
+              <tt:attribute name="AMOUNT_D" value-ref="AMOUNT_D"/>
+              <tt:attribute name="AMOUNT_V" value-ref="AMOUNT_V"/>
+              <tt:attribute name="AMOUNT_P" value-ref="AMOUNT_P"/>
+              <tt:attribute name="STATUS" value-ref="STATUS"/>
+              <tt:loop ref="YEAR">
+                <AN>
+                  <tt:attribute name="YEAR" value-ref="YEAR"/>
+                  <tt:attribute name="AMOUNT_C" value-ref="AMOUNT_C"/>
+                  <tt:attribute name="AMOUNT_J" value-ref="AMOUNT_J"/>
+                  <tt:attribute name="AMOUNT" value-ref="AMOUNT"/>
+                </AN>
+              </tt:loop>
+            </PRPS>
+          </tt:loop>
+        </OP>
+      </tt:loop>
+    </INTERFACE>
+  </tt:template>
+</tt:transform>

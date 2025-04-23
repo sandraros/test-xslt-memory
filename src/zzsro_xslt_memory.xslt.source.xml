@@ -1,0 +1,181 @@
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sap="http://www.sap.com/sapxsl" encoding="UTF-8" version="1.0">
+  <xsl:output indent="yes" method="xml" version="1.0"/>
+  <xsl:strip-space elements="*"/>
+
+  <xsl:template match="/">
+    <INTERFACE>
+      <xsl:apply-templates select="//DATA/item"/>
+    </INTERFACE>
+  </xsl:template>
+
+  <xsl:template match="DATA/item">
+    <OP>
+      <xsl:attribute name="PROJECT_ID">
+        <xsl:value-of select="PROJECT_ID"/>
+      </xsl:attribute>
+      <xsl:attribute name="ID">
+        <xsl:value-of select="ID"/>
+      </xsl:attribute>
+      <xsl:attribute name="BUKRS">
+        <xsl:value-of select="BUKRS"/>
+      </xsl:attribute>
+      <xsl:attribute name="TEXT">
+        <xsl:value-of select="TEXT"/>
+      </xsl:attribute>
+      <xsl:attribute name="LONG">
+        <xsl:value-of select="LONG"/>
+      </xsl:attribute>
+      <xsl:attribute name="PHASE_OP">
+        <xsl:value-of select="PHASE_OP"/>
+      </xsl:attribute>
+      <xsl:attribute name="TYPE">
+        <xsl:value-of select="TYPE"/>
+      </xsl:attribute>
+      <xsl:attribute name="UNIT_GE">
+        <xsl:value-of select="UNIT_GE"/>
+      </xsl:attribute>
+      <xsl:attribute name="UNIT_TE">
+        <xsl:value-of select="UNIT_TE"/>
+      </xsl:attribute>
+      <xsl:attribute name="UNIT_EP">
+        <xsl:value-of select="UNIT_EP"/>
+      </xsl:attribute>
+      <xsl:attribute name="PRIO_DG">
+        <xsl:value-of select="PRIO_DG"/>
+      </xsl:attribute>
+      <xsl:attribute name="PRIO_DT">
+        <xsl:value-of select="PRIO_DT"/>
+      </xsl:attribute>
+      <xsl:attribute name="PRIO_MA">
+        <xsl:value-of select="PRIO_MA"/>
+      </xsl:attribute>
+      <xsl:attribute name="STRAT_AXIS">
+        <xsl:value-of select="STRAT_AXIS"/>
+      </xsl:attribute>
+      <xsl:attribute name="FONC_AXIS">
+        <xsl:value-of select="FONC_AXIS"/>
+      </xsl:attribute>
+      <xsl:attribute name="TECH_AXIS">
+        <xsl:value-of select="TECH_AXIS"/>
+      </xsl:attribute>
+      <xsl:attribute name="ESTIM_M0">
+        <xsl:value-of select="ESTIM_M0"/>
+      </xsl:attribute>
+      <xsl:attribute name="DATE_M0">
+        <xsl:value-of select="DATE_M0"/>
+      </xsl:attribute>
+      <xsl:attribute name="FEC">
+        <xsl:value-of select="FEC"/>
+      </xsl:attribute>
+      <xsl:attribute name="DATE_BEG_OP">
+        <xsl:value-of select="DATE_BEG_OP"/>
+      </xsl:attribute>
+      <xsl:attribute name="DATE_END_OP">
+        <xsl:value-of select="DATE_END_OP"/>
+      </xsl:attribute>
+      <xsl:attribute name="DATE_BEG_TX">
+        <xsl:value-of select="DATE_BEG_TX"/>
+      </xsl:attribute>
+      <xsl:attribute name="DATE_END_TX">
+        <xsl:value-of select="DATE_END_TX"/>
+      </xsl:attribute>
+      <xsl:apply-templates select="./EQUI/item"/>
+      <xsl:apply-templates select="./PRPS/item"/>
+    </OP>
+  </xsl:template>
+
+  <xsl:template match="DATA/item/EQUI/item">
+    <EQUI>
+      <xsl:attribute name="MAIN">
+        <xsl:value-of select="MAIN"/>
+      </xsl:attribute>
+      <xsl:attribute name="TPLNR">
+        <xsl:value-of select="TPLNR"/>
+      </xsl:attribute>
+      <xsl:attribute name="TEXT">
+        <xsl:value-of select="TEXT"/>
+      </xsl:attribute>
+      <xsl:attribute name="SORT1">
+        <xsl:value-of select="SORT1"/>
+      </xsl:attribute>
+    </EQUI>
+  </xsl:template>
+  <xsl:template match="DATA/item/PRPS/item">
+    <PRPS>
+      <xsl:attribute name="POSID">
+        <xsl:value-of select="POSID"/>
+      </xsl:attribute>
+      <xsl:attribute name="TEXT">
+        <xsl:value-of select="TEXT"/>
+      </xsl:attribute>
+      <xsl:attribute name="PROG_YEAR">
+        <xsl:value-of select="PROG_YEAR"/>
+      </xsl:attribute>
+      <xsl:attribute name="PRART">
+        <xsl:value-of select="PRART"/>
+      </xsl:attribute>
+      <xsl:attribute name="BDG_TYPE">
+        <xsl:value-of select="BDG_TYPE"/>
+      </xsl:attribute>
+      <xsl:attribute name="DIR">
+        <xsl:value-of select="DIR"/>
+      </xsl:attribute>
+      <xsl:attribute name="SECTION">
+        <xsl:value-of select="SECTION"/>
+      </xsl:attribute>
+      <xsl:attribute name="FINCODE_NUM">
+        <xsl:value-of select="FINCODE_NUM"/>
+      </xsl:attribute>
+      <xsl:attribute name="FINCODE_SHORT">
+        <xsl:value-of select="FINCODE_SHORT"/>
+      </xsl:attribute>
+      <xsl:attribute name="FINCODE_LONG">
+        <xsl:value-of select="FINCODE_LONG"/>
+      </xsl:attribute>
+      <xsl:attribute name="BDGSERV_NUM">
+        <xsl:value-of select="BDGSERV_NUM"/>
+      </xsl:attribute>
+      <xsl:attribute name="BDGSERV_TEXT">
+        <xsl:value-of select="BDGSERV_TEXT"/>
+      </xsl:attribute>
+      <xsl:attribute name="FISTL_GE">
+        <xsl:value-of select="FISTL_GE"/>
+      </xsl:attribute>
+      <xsl:attribute name="FISTL_TE">
+        <xsl:value-of select="FISTL_TE"/>
+      </xsl:attribute>
+      <xsl:attribute name="KOSTL">
+        <xsl:value-of select="KOSTL"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT_D">
+        <xsl:value-of select="AMOUNT_D"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT_V">
+        <xsl:value-of select="AMOUNT_V"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT_P">
+        <xsl:value-of select="AMOUNT_P"/>
+      </xsl:attribute>
+      <xsl:attribute name="STATUS">
+        <xsl:value-of select="STATUS"/>
+      </xsl:attribute>
+      <xsl:apply-templates select="./YEAR/item"/>
+    </PRPS>
+  </xsl:template>
+  <xsl:template match="DATA/item/PRPS/item/YEAR/item">
+    <YEAR>
+      <xsl:attribute name="YEAR">
+        <xsl:value-of select="YEAR"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT_C">
+        <xsl:value-of select="AMOUNT_C"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT_J">
+        <xsl:value-of select="AMOUNT_J"/>
+      </xsl:attribute>
+      <xsl:attribute name="AMOUNT">
+        <xsl:value-of select="AMOUNT"/>
+      </xsl:attribute>
+    </YEAR>
+  </xsl:template>
+</xsl:transform>
